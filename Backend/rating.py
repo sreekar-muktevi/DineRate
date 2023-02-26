@@ -25,4 +25,3 @@ def new_rating(conn, id, new_rating):
     conn.execute('''UPDATE menu_items
                     SET rating = avg
                     WHERE id''')
-

@@ -1,6 +1,6 @@
 import datetime
 from markupsafe import escape
-from flask import Flask, render_template, abort
+from flask import Flask, render_template, abort, request
 import sqlite3
 
 
@@ -42,6 +42,15 @@ def hello():
 def busch():
     return render_template('busch.html', results=db_to_array(busch_conn))
 
+# update this code - replace busch with appropriate campus - for all campuses
+@app.route('/busch/', methods=['POST'])
+def my_form_post():
+    text = request.form['text']
+    processed_text = text.upper()
+    # update sql database
+
+    # print(processed_text)
+    return processed_text
 
 @app.route('/livi/')
 def livi():
