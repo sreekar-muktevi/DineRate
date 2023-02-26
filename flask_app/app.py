@@ -3,6 +3,7 @@ from markupsafe import escape
 from flask import Flask, render_template, abort
 import sqlite3
 
+
 def create_connection(db_file):
     conn = sqlite3.connect(db_file, check_same_thread=False)
     return conn
@@ -21,30 +22,36 @@ app = Flask(__name__)
 def db_to_array(conn):
     items = []
     cur = conn.cursor()
-    cur.execute("SELECT name FROM menu_items")
+    cur.execute("SELECT name, rating FROM menu_items")
 
     rows = cur.fetchall()
 
     for i in range(len(rows)):
-        items.append(rows[i][0])
+        items.append([rows[i][0], rows[i][1]])
+        items[i][1] = int(items[i][1])
 
     return items
+
 
 @app.route('/')
 def hello():
     return render_template('index.html')
 
+
 @app.route('/busch/')
 def busch():
-    return render_template('busch.html', results = db_to_array(busch_conn))
+    return render_template('busch.html', results=db_to_array(busch_conn))
+
 
 @app.route('/livi/')
 def livi():
     return render_template('livi.html', results=db_to_array(livi_conn))
 
+
 @app.route('/neilson/')
 def neilson():
     return render_template('neilson.html', results=db_to_array(neilson_conn))
+
 
 @app.route('/brower/')
 def brower():
