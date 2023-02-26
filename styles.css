@@ -115,15 +115,17 @@ a:visited {
   align-items: center;
   display: flex;
   flex-direction: column;
-  width: 400px;
+  padding-left: 50%;
+  width: 450px;
   margin-bottom: 60px;
 }
 
 .logo-image {
-  margin-top: 80px;
+  align-self: center;
+  margin-top: 40px;
   align-items: center;
-  width: 220px;
-  height: 220px;
+  width: 250px;
+  height: 250px;
   clip-path: circle();
 }
 
@@ -177,4 +179,42 @@ a:visited {
   background-color: white;
   background-repeat: no-repeat;
   background-position: 12px 11px;
+}
+
+/* STAR SHIT */
+.rate {
+  float:left;
+  margin-left: 25px;
+  height: 46px;
+  padding: 0 10px;
+}
+.rate:not(:checked) > input {
+  position:absolute;
+  top:-9999px;
+}
+.rate:not(:checked) > label {
+  float:right;
+  width:1em;
+  overflow:hidden;
+  white-space:nowrap;
+  cursor:pointer;
+  font-size:30px;
+  color:#ccc;
+}
+.rate:not(:checked) > label:before {
+  content: '★ ';
+}
+.rate > input:checked ~ label {
+  color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+  color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+  color: #c59b08;
 }
