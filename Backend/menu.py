@@ -1,3 +1,4 @@
+import random
 import requests
 from bs4 import BeautifulSoup
 import datetime
@@ -51,7 +52,7 @@ def array_to_database(conn, menu_items):
         conn.execute('''
             INSERT INTO menu_items (name, rating)
             VALUES (?, ?);
-        ''', (i, 0))
+        ''', (i, random.randrange(10, 60)/10.0))
 
     conn.commit()
     conn.close()
