@@ -27,7 +27,7 @@ match input("which campus?: "):
     case "livi":
         campus = 3
     case "neilson":
-        campus = 2
+        campus = 5
     case "brower":
         campus = 1
 
