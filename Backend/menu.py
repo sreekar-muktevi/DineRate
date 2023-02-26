@@ -62,10 +62,10 @@ def create_connection(db_file):
     return conn
 
 # Connect to the database
-busch_conn = create_connection('hackruthing/DB/busch_items.db')
-livi_conn = create_connection('hackruthing/DB/livi_items.db')
-neilson_conn = create_connection('hackruthing/DB/neilson_items.db')
-brower_conn = create_connection('hackruthing/DB/brower_items.db')
+busch_conn = create_connection('DineRate/DB/busch_items.db')
+livi_conn = create_connection('DineRate/DB/livi_items.db')
+neilson_conn = create_connection('DineRate/DB/neilson_items.db')
+brower_conn = create_connection('DineRate/DB/brower_items.db')
 
 array_to_database(busch_conn, menu_to_array(4))
 array_to_database(livi_conn, menu_to_array(3))
