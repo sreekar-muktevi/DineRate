@@ -13,11 +13,12 @@
     <h2 id="title">Livingston Dining Hall Menu</h2>
 	{% for result in results %}
         <ul class = "check-list">
-            <li>{{ result[0] }}</li>
+            <li>{{ result[0] }}
             &nbsp &nbsp
             {% for b in range(result[1]) %}
             &nbsp ★
             {% endfor %}
+            </li>   
             <div class="container">
                 <div>
                     <form action="/livi-apply-rating" method="POST">
