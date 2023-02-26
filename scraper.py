@@ -1,3 +1,4 @@
+import database
 import requests
 from bs4 import BeautifulSoup
 import sqlite3
@@ -9,7 +10,7 @@ page = requests.get(URL)
 soup = BeautifulSoup(page.content, "html.parser")
 mydivs = soup.find_all("div", {"class": "col-1"}
                        )
-thing = []
+database.menu_items
 for i in mydivs:
     thing.append(str(i)[96:-6])
 for i in range(len(thing)):
