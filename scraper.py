@@ -5,11 +5,9 @@ import sqlite3
 
 # Connect to the database
 conn = sqlite3.connect('menu_items.db')
-# Delete a menu item
-conn.execute('DELETE FROM menu_items')
-conn.execute('UPDATE sqlite_sequence SET seq=0 WHERE name="menu_items"')
 
 conn.commit()
+
 conn.execute('''
     CREATE TABLE IF NOT EXISTS menu_items (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -17,6 +15,9 @@ conn.execute('''
         rating REAL NOT NULL
     );
 ''')
+             
+conn.execute('DELETE FROM menu_items')
+conn.execute('UPDATE sqlite_sequence SET seq=0 WHERE name="menu_items"')
 
 campus = 0
 
