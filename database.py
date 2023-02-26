@@ -15,8 +15,11 @@ conn.execute('''
 # Insert a menu item
 conn.execute('''
     INSERT INTO menu_items (name, rating)
-    VALUES (?, ?, ?);
+    VALUES (?, ?);
 ''', ('Cheeseburger', 9))
+
+# Delete a menu item
+conn.execute('DELETE FROM menu_items WHERE id = ?', (1,))
 
 # Commit the changes and close the connection
 conn.commit()

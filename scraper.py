@@ -1,6 +1,19 @@
 import requests
 from bs4 import BeautifulSoup
 import datetime
+import sqlite3
+
+# Connect to the database
+conn = sqlite3.connect('menu_items.db')
+
+conn.execute('''
+    CREATE TABLE IF NOT EXISTS menu_items (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL,
+        rating REAL NOT NULL
+    );
+''')
+
 x = input("which campus?: ")
 if (x == "busch"):
     x = 4
@@ -22,6 +35,13 @@ mydivs = soup.find_all("div", {"class": "col-1"}
 thing = []
 for i in mydivs:
     thing.append(str(i)[96:-6])
+    conn.execute('''
+        INSERT INTO menu_items (name, rating)
+        VALUES (?, ?);
+    ''', (str(i)[96:-6], 0))
+    conn.commit()
+    conn.close()
+    
 for i in range(len(thing)):
     if(thing[i][0] == '>'):
         thing[i] = thing[i][1:]
