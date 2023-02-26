@@ -35,10 +35,6 @@ mydivs = soup.find_all("div", {"class": "col-1"}
 thing = []
 for i in mydivs:
     thing.append(str(i)[96:-6])
-    conn.execute('''
-        INSERT INTO menu_items (name, rating)
-        VALUES (?, ?);
-    ''', (str(i)[96:-6], 0))
 
     
 for i in range(len(thing)):
@@ -49,6 +45,11 @@ for i in range(len(thing)):
     #     i -= 2
 for i in thing:
     print(i)
+    conn.execute('''
+        INSERT INTO menu_items (name, rating)
+        VALUES (?, ?);
+    ''', (i, 0))
+
 
 conn.commit()
 
