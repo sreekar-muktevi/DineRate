@@ -1,0 +1,151 @@
+#title{
+	float: center;
+	font-size: 3rem;
+	margin: 25px 400px 0px 500px;
+  }
+
+.check-list {
+	margin: 0;
+	padding-left: 1.2rem;
+  }
+  
+  .check-list li {
+	list-style-type: none;
+	margin-top: 1.5rem;
+	padding: 1rem;
+	margin-bottom: 0rem;
+	background-color: #c03;
+	color: white;
+  }
+  
+/** BEGIN: Non Openmrs CSS **/
+* {
+	font-family: serif;
+}
+div.container {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-around;
+	padding-top: 10px;
+	margin-right: 1075px;
+	border: 3.5px solid #cc0033;
+	border-top: 0px;
+}
+
+/** END: Non Openmrs CSS **/
+div.omrs-input-group {
+  margin-bottom: 0rem;
+  position: relative;
+  width: 20.4375rem;
+}
+
+/* Input*/
+.omrs-input-underlined > input,
+.omrs-input-filled > input {
+	width: 100%;
+	height: 2rem;
+	font-size: 1.0625rem;
+	padding-left: 0.875rem;
+	line-height: 100.6%;
+	padding-bottom: 0.5rem;
+}
+
+.omrs-input-underlined > input:focus,
+.omrs-input-filled > input:focus {
+	outline: none;
+}
+
+.omrs-input-underlined > .omrs-input-label,
+.omrs-input-filled > .omrs-input-label {
+	
+	top: 0.9375rem;
+	left: 0.875rem;
+	line-height: 147.6%;
+	color: var(--omrs-color-ink-medium-contrast);
+	transition: top .2s;
+}
+
+.omrs-input-underlined > svg,
+.omrs-input-filled > svg {
+	position: absolute;
+	top: 0.9375rem;
+	right: 0.875rem;
+	fill: var(--omrs-color-ink-medium-contrast);
+}
+
+.omrs-input-underlined > .omrs-input-helper,
+.omrs-input-filled > .omrs-input-helper {
+	font-size: 0.9375rem;
+	color: var(--omrs-color-ink-medium-contrast);
+	letter-spacing: 0.0275rem;
+	margin: 0.125rem 0.875rem;
+}
+
+.omrs-input-underlined > input:hover,
+.omrs-input-filled > input:hover {
+	background: var(--omrs-color-interaction-minus-two);
+	border-color: var(--omrs-color-ink-high-contrast);
+}
+
+.omrs-input-underlined > input:focus + .omrs-input-label,
+.omrs-input-underlined > input:valid + .omrs-input-label,
+.omrs-input-filled > input:focus + .omrs-input-label,
+.omrs-input-filled > input:valid + .omrs-input-label {
+	top: 0;
+	font-size: 0.9375rem;
+	margin-bottom: 12px;;
+}
+
+  .check-list li:before {
+	  content: '';
+	  display: flex;
+	  position: absolute;
+	  left: 5px;
+	  fill: #fff;
+	  top: 3px;
+	  width: 5px;
+	  height: 5px;
+	  border-style: solid;
+	  border-color: #00a8a8;
+	  transform-origin: bottom left;
+	  rotate: 45deg;
+  }
+  
+  /* Boilerplate stuff */
+  *,
+  *:before,
+  *:after {
+	box-sizing: border-box;
+  }
+  
+  html {
+	-webkit-font-smoothing: antialiased;
+	font-family: "Helvetica Neue", sans-serif;
+	font-size: 62.5%;
+  }
+  
+  body {
+	font-size: 1.6rem; /* 18px */
+	background-color: white;
+	color: black;
+  }
+  
+  html,
+  body,
+  section {
+	height: 100%;
+  }
+  
+  section {
+	max-width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	align-items: center;
+  }
+  
+  div {
+	margin: auto;
+  }
+  
+  

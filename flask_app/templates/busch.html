@@ -8,23 +8,23 @@
     <link rel="stylesheet" href="../static/busch.css" />
 </head>
 <body>
-    <h2>Busch Dining Hall Menu:</h2>
+    <h2 id="title">Busch Dining Hall Menu</h2>
 	{% for result in results %}
         <ul class = "check-list">
-            <li>{{ result[0] }}</li>
-            &nbsp &nbsp
+            <li>{{ result[0] }}
+                &nbsp &nbsp
             {% for b in range(result[1]) %}
             &nbsp ★
             {% endfor %}
+            </li>
             <div class="container">
                 <div>
                     <form action="/busch-apply-rating" method="POST">
                         <div class="omrs-input-group">
                             <label class="omrs-input-underlined">
                               Rating: <input name = "rating">
-                              <span class="omrs-input-label">Enter Rating</span>
-                                <span class="omrs-input-helper">Enter a value from 1-5</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"></svg>
+                            <span class="omrs-input-helper">Rate on a scale from 1-5</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" background-color= "gray" width="24" height="24" viewBox="0 0 24 24"></svg>
                             </label>
                     </form>
                 </div>
