@@ -4,7 +4,7 @@ import datetime
 import sqlite3
 
 # Connect to the database
-conn = sqlite3.connect('menu_items.db')
+conn = sqlite3.connect('DB/menu_items.db')
 
 # Create an empty database if it doesn't already exist
 conn.execute('''
@@ -23,7 +23,7 @@ conn.execute('UPDATE sqlite_sequence SET seq=0 WHERE name="menu_items"')
 conn.commit()
 
 # Maps each campus to the number in the link
-match input("which campus?: "):
+match (input("which campus?: ")).lower():
     case "busch":
         campus = 4
     case "livi":

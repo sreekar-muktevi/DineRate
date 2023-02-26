@@ -12,9 +12,10 @@
 
 </head>
 <body>
+  <p class = "sign-in">Sign in to save your ratings:</p>
   <div class="g-signin2" data-onsuccess="onSignIn"></div>
-  <button onclick="onSignInClicked()">Google Sign in</button>
-  <button onclick="signOut()">Sign out</button>
+  <button class = "login-with-google-btn" onclick="onSignInClicked()">Sign in</button>
+  <button class = "login-with-google-btn" onclick="signOut()">Sign out</button>
 
   <script>
     function onSignIn(googleUser) {
@@ -62,7 +63,7 @@
       </div>
       <div class="card-text">
         <p class="card-meal-type">Breakfast/Eggs</p>
-        <a href= "busch.html" class="card-title">Busch Dining Hall</a>
+        <a href= DiningHall/busch.html class="card-title">Busch Dining Hall</a>
       </div>
       <div class="card-price">5</div>
     </div>
@@ -74,7 +75,7 @@
       </div>
       <div class="card-text">
         <p class="card-meal-type">Lunch/Meat</p>
-        <a href="google.com" class="card-title">Livingston Dining Hall</a>
+        <a href="DiningHall/livi.html" class="card-title">Livingston Dining Hall</a>
       </div>
       <div class="card-price">4</div>
     </div>
@@ -86,7 +87,7 @@
       </div>
       <div class="card-text">
         <p class="card-meal-type">Soups/Meat</p>
-        <a href= "google.com" class="card-title">Nielson Dining Hall</a>
+        <a href= "DiningHall/neilson.html" class="card-title">Nielson Dining Hall</a>
       </div>
       <div class="card-price">3</div>
     </div>
@@ -98,7 +99,7 @@
       </div>
       <div class="card-text">
         <p class="card-meal-type">Appetizers/Meat</p>
-        <a href= "google.com" class="card-title">Brower Dining Hall</a>
+        <a href= "DiningHall/brower.html" class="card-title">Brower Dining Hall</a>
       </div>
       <div class="card-price">2</div>
     </div>
