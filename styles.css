@@ -5,13 +5,14 @@
   box-sizing:border-box;
   font-family:'Playfair Display', serif;
 }
-body{ background:url(https://images.unsplash.com/photo-1495195129352-aeb325a55b65?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1776&q=80);
+body{ background: #27272c;
   background-size:cover;
   background-position:right;
   background-attachment:fixed;
 }
 #header{
   margin:20px;
+  color:white
 }
 #header>h1{
   text-align:center;
@@ -48,7 +49,7 @@ a:visited {
   margin-bottom:60px;
 }
 .card>div{
-  box-shadow:0 15px 20px 0 rgba(0,0,0,0.5);
+  box-shadow:0 5px 10px 0 rgba(0,0,0,0.5);
 }
 .card-image{
   width:400px;
