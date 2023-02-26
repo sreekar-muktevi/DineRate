@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,10 +12,11 @@
   <script src="https://apis.google.com/js/api.js?onload=onLibraryLoaded" async defer></script>
 
 </head>
+
 <body>
   <div class="g-signin2" data-onsuccess="onSignIn"></div>
-  <button class = "login-with-google-btn" onclick="onSignInClicked()">Sign in</button>
-  <button class = "sign-out-with-google-btn" onclick="signOut()">Sign out</button>
+  <button class="login-with-google-btn" onclick="onSignInClicked()">Sign in</button>
+  <button class="sign-out-with-google-btn" onclick="signOut()">Sign out</button>
 
   <script>
     function onSignIn(googleUser) {
@@ -23,49 +25,35 @@
     }
 
     function signOut() {
-      gapi.auth2.getAuthInstance().signOut().then(function() {
+      gapi.auth2.getAuthInstance().signOut().then(function () {
         console.log('user signed out')
       })
     }
 
     function onLibraryLoaded() {
-        gapi.load('auth2', function() {
-            gapi.auth2.init({
-                client_id: 'YOUR_CLIENT_ID.apps.googleusercontent.com',
-                scope: 'profile'
-            })
+      gapi.load('auth2', function () {
+        gapi.auth2.init({
+          client_id: 'YOUR_CLIENT_ID.apps.googleusercontent.com',
+          scope: 'profile'
         })
+      })
     }
 
     function onSignInClicked() {
-        gapi.load('auth2', function() {
-            gapi.auth2.signIn().then(function(googleUser) {
-              console.log('user signed in')
-            }, function(error) {
-                console.log('user failed to sign in')
-            })
+      gapi.load('auth2', function () {
+        gapi.auth2.signIn().then(function (googleUser) {
+          console.log('user signed in')
+        }, function (error) {
+          console.log('user failed to sign in')
         })
-    }
-    const btn = document.querySelector("button");
-    const post = document.querySelector(".post");
-    const widget = document.querySelector(".star-widget");
-    const editBtn = document.querySelector(".edit");
-    btn.onclick = ()=>{
-      widget.style.display = "none";
-      post.style.display = "block";
-      editBtn.onclick = ()=>{
-        widget.style.display = "block";
-        post.style.display = "none";
-      }
-      return false;
-    }
+      })
   </script>
 
 
-  
-  <div class = "logo"> 
-    <div class = "logo-image">
-      <img class = "img" src="../static/Images/logo.png"/>
+
+  <div class="logo">
+    <div class="logo-image">
+      <img class="img" src="../static/Images/logo.png" />
     </div>
   </div>
 
@@ -77,89 +65,7 @@
         <img src="../static/Images/busch.jpg">
       </div>
       <div class="card-text">
-        <a href= "http://127.0.0.1:5000/busch" class="card-title">Busch Dining Hall</a>
-        <div class="rate">
-          <input type="radio" id="star5" name="rate" value="5" />
-          <label for="star5" title="text">5 stars</label>
-          <input type="radio" id="star4" name="rate" value="4" />
-          <label for="star4" title="text">4 stars</label>
-          <input type="radio" id="star3" name="rate" value="3" />
-          <label for="star3" title="text">3 stars</label>
-          <input type="radio" id="star2" name="rate" value="2" />
-          <label for="star2" title="text">2 stars</label>
-          <input type="radio" id="star1" name="rate" value="1" />
-          <label for="star1" title="text">1 star</label>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="card">
-      <div class="card-image">
-        <img src="../static/Images/livingston.jpg">
-      </div>
-      <div class="card-text">
-        <a href="http://127.0.0.1:5000/livi" class="card-title">Livingston Dining Hall</a>
-        <div class="rate">
-          <input type="radio" id="star10" name="rate" value="5" />
-          <label for="star10" title="text">5 stars</label>
-          <input type="radio" id="star9" name="rate" value="4" />
-          <label for="star9" title="text">4 stars</label>
-          <input type="radio" id="star8" name="rate" value="3" />
-          <label for="star8" title="text">3 stars</label>
-          <input type="radio" id="star7" name="rate" value="2" />
-          <label for="star7" title="text">2 stars</label>
-          <input type="radio" id="star6" name="rate" value="1" />
-          <label for="star6" title="text">1 star</label>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="card">
-      <div class="card-image">
-        <img src="../static/Images/neilson.jpg">
-      </div>
-      <div class="card-text">
-        <a href= "http://127.0.0.1:5000/neilson" class="card-title">Nielson Dining Hall</a>
-
-        <div class="container">
-          <div class="post">
-            <div class="text">Thanks for rating us!</div>
-            <div class="edit">EDIT</div>
-          </div>
-          <div class="star-widget">
-            <input type="radio" name="rate" id="rate-5">
-            <label for="rate-5" class="fas fa-star"></label>
-            <input type="radio" name="rate" id="rate-4">
-            <label for="rate-4" class="fas fa-star"></label>
-            <input type="radio" name="rate" id="rate-3">
-            <label for="rate-3" class="fas fa-star"></label>
-            <input type="radio" name="rate" id="rate-2">
-            <label for="rate-2" class="fas fa-star"></label>
-            <input type="radio" name="rate" id="rate-1">
-            <label for="rate-1" class="fas fa-star"></label>
-            <form action="#">
-              <header></header>
-              <div class="textarea">
-                <textarea cols="30" placeholder="Describe your experience.."></textarea>
-              </div>
-              <div class="btn">
-                <button type="submit">Post</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="card">
-      <div class="card-image">
-        <img src="../static/Images/brower.jpg">
-      </div>
-      <div class="card-text">
-        <a href= "http://127.0.0.1:5000/brower" class="card-title">Brower Dining Hall</a>
+        <a href="http://127.0.0.1:5000/busch" class="card-title">Busch Dining Hall</a>
         <div class="rate">
           <input type="radio" id="star20" name="rate" value="5" />
           <label for="star20" title="text">5 stars</label>
@@ -174,8 +80,75 @@
         </div>
       </div>
     </div>
-  
+
+
+    <div class="card">
+      <div class="card-image">
+        <img src="../static/Images/livingston.jpg">
+      </div>
+      <div class="card-text">
+        <a href="http://127.0.0.1:5000/livi" class="card-title">Livingston Dining Hall</a>
+        <div class="rate">
+          <input type="radio" id="star20" name="rate" value="5" />
+          <label for="star20" title="text">5 stars</label>
+          <input type="radio" id="star19" name="rate" value="4" />
+          <label for="star19" title="text">4 stars</label>
+          <input type="radio" id="star18" name="rate" value="3" />
+          <label for="star18" title="text">3 stars</label>
+          <input type="radio" id="star17" name="rate" value="2" />
+          <label for="star17" title="text">2 stars</label>
+          <input type="radio" id="star16" name="rate" value="1" />
+          <label for="star16" title="text">1 star</label>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <div class="card-image">
+        <img src="../static/Images/neilson.jpg">
+      </div>
+      <div class="card-text">
+        <a href="http://127.0.0.1:5000/neilson" class="card-title">Nielson Dining Hall</a>
+        <div class="rate">
+          <input type="radio" id="star20" name="rate" value="5" />
+          <label for="star20" title="text">5 stars</label>
+          <input type="radio" id="star19" name="rate" value="4" />
+          <label for="star19" title="text">4 stars</label>
+          <input type="radio" id="star18" name="rate" value="3" />
+          <label for="star18" title="text">3 stars</label>
+          <input type="radio" id="star17" name="rate" value="2" />
+          <label for="star17" title="text">2 stars</label>
+          <input type="radio" id="star16" name="rate" value="1" />
+          <label for="star16" title="text">1 star</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="card">
+    <div class="card-image">
+      <img src="../static/Images/brower.jpg">
+    </div>
+    <div class="card-text">
+      <a href="http://127.0.0.1:5000/brower" class="card-title">Brower Dining Hall</a>
+      <div class="rate">
+        <input type="radio" id="star20" name="rate" value="5" />
+        <label for="star20" title="text">5 stars</label>
+        <input type="radio" id="star19" name="rate" value="4" />
+        <label for="star19" title="text">4 stars</label>
+        <input type="radio" id="star18" name="rate" value="3" />
+        <label for="star18" title="text">3 stars</label>
+        <input type="radio" id="star17" name="rate" value="2" />
+        <label for="star17" title="text">2 stars</label>
+        <input type="radio" id="star16" name="rate" value="1" />
+        <label for="star16" title="text">1 star</label>
+      </div>
+    </div>
+  </div>
+
   </div>
 </body>
-</html>
 
+</html>

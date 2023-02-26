@@ -8,99 +8,10 @@
     <link rel="stylesheet" href="../static/busch.css" />
 </head>
 <body>
-    <section id="popular" class="module">
-		<div class="container">
-
-			<div class="row">
-				<div class="col-sm-6 col-sm-offset-3">
-					<div class="module-header wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
-						<h2 class="module-title">Busch Menu</h2>
-						<h3 class="module-subtitle">Most rated items</h3>
-					</div>
-				</div>
-			</div><!-- .row -->
-
-			<div class="row">
-
-				<div class="col-sm-6">
-
-					<div class="menu">
-						<div class="row">
-							<div class="col-sm-8">
-								<h4 class="menu-title">Wild Mushroom Bucatini with Kale</h4>
-							</div>
-						</div>
-					</div>
-
-					<div class="menu">
-						<div class="row">
-							<div class="col-sm-8">
-								<h4 class="menu-title">Lemon and Garlic Green Beans</h4>
-							</div>
-						</div>
-					</div>
-
-					<div class="menu">
-						<div class="row">
-							<div class="col-sm-8">
-								<h4 class="menu-title">LambBeef Kofka Skewers with Tzatziki</h4>
-							</div>
-						</div>
-					</div>
-
-					<div class="menu">
-						<div class="row">
-							<div class="col-sm-8">
-								<h4 class="menu-title">Imported Oysters Grill (5 Pieces)</h4>
-							</div>
-						</div>
-					</div>
-
-					<div class="menu">
-						<div class="row">
-							<div class="col-sm-8">
-								<h4 class="menu-title">Meatloaf with Black Pepper-Honey BBQ</h4>
-							</div>
-						</div>
-					</div>
-
-				<div class="col-sm-6">
-
-					<div class="menu">
-						<div class="row">
-							<div class="col-sm-8">
-								<h4 class="menu-title">Wild Mushroom Bucatini with Kale</h4>
-							</div>
-						</div>
-					</div>
-
-					<div class="menu">
-						<div class="row">
-							<div class="col-sm-8">
-								<h4 class="menu-title">Lemon and Garlic Green Beans</h4>
-							</div>
-						</div>
-					</div>
-
-					<div class="menu">
-						<div class="row">
-							<div class="col-sm-8">
-								<h4 class="menu-title">LambBeef Kofka Skewers with Tzatziki</h4>
-						</div>
-					</div>
-
-				</div><!-- .col-sm-6 -->
-
-			</div><!-- .row -->
-
-			<div class="row">
-				<div class="col-sm-6 col-sm-offset-3">
-					<div class="devider">
-					</div>
-				</div>
-			</div><!-- .row -->
-
-		</div><!-- .container -->
-	</section>
+	{% for result in results %}
+	<ul>
+		<li>{{ result }}</li>
+	</ul>
+	{% endfor %}
 </body>
 </html>
