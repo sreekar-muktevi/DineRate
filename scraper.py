@@ -5,7 +5,11 @@ import sqlite3
 
 # Connect to the database
 conn = sqlite3.connect('menu_items.db')
+# Delete a menu item
+conn.execute('DELETE FROM menu_items')
+conn.execute('UPDATE sqlite_sequence SET seq=0 WHERE name="menu_items"')
 
+conn.commit()
 conn.execute('''
     CREATE TABLE IF NOT EXISTS menu_items (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -13,7 +17,8 @@ conn.execute('''
         rating REAL NOT NULL
     );
 ''')
-
+# conn.execute('DELETE FROM sqlite_sequence WHERE name="menu_items"')
+# conn.execute('ALTER TABLE menu_items AUTOINCREMENT=1')
 x = input("which campus?: ")
 if (x == "busch"):
     x = 4
@@ -58,5 +63,5 @@ result_set = conn.execute('SELECT * FROM menu_items')
 # Fetch the results and print them
 for row in result_set:
     print(row)
-    
+
 conn.close()
