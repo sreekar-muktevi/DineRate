@@ -6,8 +6,7 @@ import sqlite3
 # Connect to the database
 conn = sqlite3.connect('menu_items.db')
 
-conn.commit()
-
+# Create an empty database if it doesn't already exist
 conn.execute('''
     CREATE TABLE IF NOT EXISTS menu_items (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -15,12 +14,15 @@ conn.execute('''
         rating REAL NOT NULL
     );
 ''')
-             
+
+# Deletes database if existing already          
 conn.execute('DELETE FROM menu_items')
+
+# Resets index to 1
 conn.execute('UPDATE sqlite_sequence SET seq=0 WHERE name="menu_items"')
+conn.commit()
 
-campus = 0
-
+# Maps each campus to the number in the link
 match input("which campus?: "):
     case "busch":
         campus = 4
@@ -31,13 +33,15 @@ match input("which campus?: "):
     case "brower":
         campus = 1
 
+# Future menu option 
 day = input("how many days? (0 for today, up to 7 in advance):")
 
+# URL editing
 URL = "http://menuportal.dining.rutgers.edu/foodpro/pickmenu.asp?sName=+University+Dining&locationNum=0"
 URL += str(campus)
 
+# Web Scraping 
 page = requests.get(URL)
-
 soup = BeautifulSoup(page.content, "html.parser")
 mydivs = soup.find_all("div", {"class": "col-1"})
 

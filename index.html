@@ -6,8 +6,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DineRate</title>
   <link rel="stylesheet" href="styles.css" />
+
+  <meta name="google-signin-client_id" content="your-client-id-goes-here">
+  <script src="https://apis.google.com/js/api.js?onload=onLibraryLoaded" async defer></script>
+
 </head>
 <body>
+  <div class="g-signin2" data-onsuccess="onSignIn"></div>
+  <button onclick="onSignInClicked()">Google Sign in</button>
+  <button onclick="signOut()">Sign out</button>
+
+  <script>
+    function onSignIn(googleUser) {
+      // get user profile information
+      console.log(googleUser.getBasicProfile())
+    }
+
+    function signOut() {
+      gapi.auth2.getAuthInstance().signOut().then(function() {
+        console.log('user signed out')
+      })
+    }
+
+    function onLibraryLoaded() {
+        gapi.load('auth2', function() {
+            gapi.auth2.init({
+                client_id: 'YOUR_CLIENT_ID.apps.googleusercontent.com',
+                scope: 'profile'
+            })
+        })
+    }
+
+    function onSignInClicked() {
+        gapi.load('auth2', function() {
+            gapi.auth2.signIn().then(function(googleUser) {
+              console.log('user signed in')
+            }, function(error) {
+                console.log('user failed to sign in')
+            })
+        })
+    }
+  </script>
+
+
   <div id="header">
     <h1>DineRate</h1>
     <p>Dining Hall Rating Service</p>
