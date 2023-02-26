@@ -39,8 +39,7 @@ for i in mydivs:
         INSERT INTO menu_items (name, rating)
         VALUES (?, ?);
     ''', (str(i)[96:-6], 0))
-    conn.commit()
-    conn.close()
+
     
 for i in range(len(thing)):
     if(thing[i][0] == '>'):
@@ -50,3 +49,13 @@ for i in range(len(thing)):
     #     i -= 2
 for i in thing:
     print(i)
+
+conn.commit()
+
+result_set = conn.execute('SELECT * FROM menu_items')
+
+# Fetch the results and print them
+for row in result_set:
+    print(row)
+    
+conn.close()
