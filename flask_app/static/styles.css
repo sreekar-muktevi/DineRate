@@ -12,6 +12,10 @@ body {
   background: linear-gradient(180deg, white 55.5%, #c03 55%);
 }
 
+#title{
+  margin: 9px 0px 0px 450px;
+  font-size: 3rem;
+}
 
 a:link {
   color: white;
@@ -31,7 +35,7 @@ a:hover {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  padding: 20px 20px 120px;
+  padding: 20px 20px 0px;
   margin-top: 100px;
   margin-bottom: 100px;
 }
@@ -141,6 +145,11 @@ a:hover {
   background-color: white;
   background-repeat: no-repeat;
   background-position: 12px 11px;
+}
+
+.filling {
+  background-color: #c03;
+  height: 500px;
 }
 
 /* STAR SHIT */
