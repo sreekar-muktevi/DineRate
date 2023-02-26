@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DineRate</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="../static/styles.css" />
 
   <meta name="google-signin-client_id" content="your-client-id-goes-here">
   <script src="https://apis.google.com/js/api.js?onload=onLibraryLoaded" async defer></script>
@@ -49,24 +49,22 @@
   </script>
 
 
-  <div id="header">
-    <div class = "logo"> 
-      <div class = "logo-image">
-        <p href="index.html" class = card-title>
-          <img src="Images/logo.png" alt="DineRate Logo" id="hp"/>
-        </p>
-      </div>
+  
+  <div class = "logo"> 
+    <div class = "logo-image">
+      <img class = "img" src="../static/Images/logo.png"/>
     </div>
   </div>
+
   <div class="container">
 
 
     <div class="card">
       <div class="card-image">
-        <img src="https://slwordpress.rutgers.edu/dining/wp-content/uploads/sites/138/2018/08/Busch-Dining-Hall.jpg">
+        <img src="../static/Images/busch.jpg">
       </div>
       <div class="card-text">
-        <a href= "Images/busch.jpg" class="card-title">Busch Dining Hall</a>
+        <a href= "http://127.0.0.1:5000/busch" class="card-title">Busch Dining Hall</a>
         <div class="rate">
           <input type="radio" id="star5" name="rate" value="5" />
           <label for="star5" title="text">5 stars</label>
@@ -85,10 +83,10 @@
 
     <div class="card">
       <div class="card-image">
-        <img src="https://i.pinimg.com/originals/fb/00/b0/fb00b0b6d1d9ceecbbe4df78d58cf969.jpg">
+        <img src="../static/Images/livingston.jpg">
       </div>
       <div class="card-text">
-        <a href="Images/livingston.jpg" class="card-title">Livingston Dining Hall</a>
+        <a href="http://127.0.0.1:5000/livi" class="card-title">Livingston Dining Hall</a>
         <div class="rate">
           <input type="radio" id="star10" name="rate" value="5" />
           <label for="star10" title="text">5 stars</label>
@@ -107,10 +105,10 @@
 
     <div class="card">
       <div class="card-image">
-        <img src="https://scarletandblack.rutgers.edu/archive/files/original/010496dab9cd90d89b7ac303a4f83b2b.jpg">
+        <img src="../static/Images/neilson.jpg">
       </div>
       <div class="card-text">
-        <a href= "Images/neilson.jpg" class="card-title">Nielson Dining Hall</a>
+        <a href= "http://127.0.0.1:5000/neilson" class="card-title">Nielson Dining Hall</a>
         <div class="rate">
           <input type="radio" id="star15" name="rate" value="5" />
           <label for="star15" title="text">5 stars</label>
@@ -129,10 +127,10 @@
 
     <div class="card">
       <div class="card-image">
-        <img src="https://s3.amazonaws.com/secretsaucefiles/photos/images/000/102/121/large/QonKc4I.jpg?1485305556">
+        <img src="../static/Images/brower.jpg">
       </div>
       <div class="card-text">
-        <a href= "Images/brower.jpg" class="card-title">Brower Dining Hall</a>
+        <a href= "http://127.0.0.1:5000/brower" class="card-title">Brower Dining Hall</a>
         <div class="rate">
           <input type="radio" id="star20" name="rate" value="5" />
           <label for="star20" title="text">5 stars</label>
