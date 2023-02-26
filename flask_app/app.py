@@ -10,7 +10,6 @@ def create_connection(db_file):
 
 
 # Connect to the database
-
 busch_conn = create_connection('../DB/busch_items.db')
 livi_conn = create_connection('../DB/livi_items.db')
 neilson_conn = create_connection('../DB/neilson_items.db')
@@ -32,36 +31,77 @@ def db_to_array(conn):
 
     return items
 
+def ratings_to_array(conn):
+    items = []
+    cur = conn.cursor()
+    cur.execute("SELECT rating FROM menu_items")
+    rows = cur.fetchall()
+
+    for row in rows:
+        items.append(row[0])
+
+    return items
+
 
 @app.route('/')
 def hello():
     return render_template('index.html')
 
+# @app.route('/busch-apply-rating', methods=['POST'])
+# def applyrating():
+#     new_rating = int(request.form['rating'])
+#     ratings = ratings_to_array(busch_conn)
+#     avg = (sum(ratings[1]) + new_rating) / (len(ratings[1]) + 1)
+#     busch_conn.execute('''UPDATE menu_items
+#                     SET rating = ?
+#                     WHERE 1''', (avg))
+
+@app.route('/busch-apply-rating', methods=['POST'])
+def buschapplyrating():
+    new_rating = int(request.form['rating'])
+    ratings = ratings_to_array(busch_conn)
+    avg = (sum(ratings) + new_rating) / (len(ratings) + 1)
+    busch_conn.execute('UPDATE menu_items SET rating = ?', (avg,))
+    busch_conn.commit()
+    return render_template('busch.html', items=db_to_array(busch_conn))
+
+@app.route('/livi-apply-rating', methods=['POST'])
+def liviapplyrating():
+    new_rating = int(request.form['rating'])
+    ratings = ratings_to_array(livi_conn)
+    avg = (sum(ratings) + new_rating) / (len(ratings) + 1)
+    livi_conn.execute('UPDATE menu_items SET rating = ?', (avg,))
+    livi_conn.commit()
+    return render_template('busch.html', items=db_to_array(livi_conn))
+
+@app.route('/neilson-apply-rating', methods=['POST'])
+def neilsonapplyrating():
+    new_rating = int(request.form['rating'])
+    ratings = ratings_to_array(neilson_conn)
+    avg = (sum(ratings) + new_rating) / (len(ratings) + 1)
+    neilson_conn.execute('UPDATE menu_items SET rating = ?', (avg,))
+    neilson_conn.commit()
+    return render_template('busch.html', items=db_to_array(neilson_conn))
+
+@app.route('/brower-apply-rating', methods=['POST'])
+def browerapplyrating():
+    new_rating = int(request.form['rating'])
+    ratings = ratings_to_array(brower_conn)
+    avg = (sum(ratings) + new_rating) / (len(ratings) + 1)
+    brower_conn.execute('UPDATE menu_items SET rating = ?', (avg,))
+    brower_conn.commit()
+    return render_template('busch.html', items=db_to_array(brower_conn))
+
 
 @app.route('/busch/')
 def busch():
     return render_template('busch.html', results=db_to_array(busch_conn))
-
-# update this code - replace busch with appropriate campus - for all campuses
-@app.route('/busch/', methods=['POST'])
-def my_form_post():
-    text = request.form['text']
-    processed_text = text.upper()
-    # update sql database
-
-    # print(processed_text)
-    return processed_text
-
 @app.route('/livi/')
 def livi():
     return render_template('livi.html', results=db_to_array(livi_conn))
-
-
 @app.route('/neilson/')
 def neilson():
     return render_template('neilson.html', results=db_to_array(neilson_conn))
-
-
 @app.route('/brower/')
 def brower():
-    return render_template('brower.html', results=db_to_array(neilson_conn))
+    return render_template('brower.html', results=db_to_array(brower_conn))

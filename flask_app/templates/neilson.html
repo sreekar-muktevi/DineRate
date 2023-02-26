@@ -10,10 +10,28 @@
 </head>
 
 <body>
-    {% for result in results %}
-    <ul>
-        <li>{{ result }}</li>
-    </ul>
+    <h2>Neilson Dining Hall Menu:</h2>
+	{% for result in results %}
+        <ul class = "check-list">
+            <li>{{ result[0] }}</li>
+            &nbsp &nbsp
+            {% for b in range(result[1]) %}
+            &nbsp ★
+            {% endfor %}
+            <div class="container">
+                <div>
+                    <form action="/neilson-apply-rating" method="POST">
+                        <div class="omrs-input-group">
+                            <label class="omrs-input-underlined">
+                              Rating: <input name = "rating">
+                              <span class="omrs-input-label">Enter Rating</span>
+                                <span class="omrs-input-helper">Enter a value from 1-5</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"></svg>
+                            </label>
+                    </form>
+                </div>
+            </div>
+        </ul>
     {% endfor %}
 </body>
 
