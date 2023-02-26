@@ -63,7 +63,7 @@ def buschapplyrating():
     avg = (sum(ratings) + new_rating) / (len(ratings) + 1)
     busch_conn.execute('UPDATE menu_items SET rating = ?', (avg,))
     busch_conn.commit()
-    return render_template('busch.html', items=db_to_array(busch_conn))
+    return busch()
 
 @app.route('/livi-apply-rating', methods=['POST'])
 def liviapplyrating():
@@ -72,7 +72,7 @@ def liviapplyrating():
     avg = (sum(ratings) + new_rating) / (len(ratings) + 1)
     livi_conn.execute('UPDATE menu_items SET rating = ?', (avg,))
     livi_conn.commit()
-    return render_template('busch.html', items=db_to_array(livi_conn))
+    return livi()
 
 @app.route('/neilson-apply-rating', methods=['POST'])
 def neilsonapplyrating():
@@ -81,7 +81,7 @@ def neilsonapplyrating():
     avg = (sum(ratings) + new_rating) / (len(ratings) + 1)
     neilson_conn.execute('UPDATE menu_items SET rating = ?', (avg,))
     neilson_conn.commit()
-    return render_template('busch.html', items=db_to_array(neilson_conn))
+    return neilson()
 
 @app.route('/brower-apply-rating', methods=['POST'])
 def browerapplyrating():
@@ -90,7 +90,7 @@ def browerapplyrating():
     avg = (sum(ratings) + new_rating) / (len(ratings) + 1)
     brower_conn.execute('UPDATE menu_items SET rating = ?', (avg,))
     brower_conn.commit()
-    return render_template('busch.html', items=db_to_array(brower_conn))
+    return brower()
 
 
 @app.route('/busch/')
