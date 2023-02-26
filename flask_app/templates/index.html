@@ -14,59 +14,51 @@
 </head>
 
 <body>
-  <div class="g-signin2" data-onsuccess="onSignIn"></div>
-  <button class="login-with-google-btn" onclick="onSignInClicked()">Sign in</button>
-  <button class="sign-out-with-google-btn" onclick="signOut()">Sign out</button>
+    <div class="topnav">
+      <img class="logo-image" src="../static/Images/logo.png" />
 
-  <script>
-    function onSignIn(googleUser) {
-      // get user profile information
-      console.log(googleUser.getBasicProfile())
-    }
+      <div class="g-signin2" data-onsuccess="onSignIn"></div>
+      <button class="sign-out-with-google-btn" onclick="signOut()">Sign out</button>
+      <button class="login-with-google-btn" onclick="onSignInClicked()">Sign in</button>
+      <script>
+        function onSignIn(googleUser) {
+          // get user profile information
+          console.log(googleUser.getBasicProfile())
+        }
 
-    function signOut() {
-      gapi.auth2.getAuthInstance().signOut().then(function () {
-        console.log('user signed out')
-      })
-    }
+        function signOut() {
+          gapi.auth2.getAuthInstance().signOut().then(function () {
+            console.log('user signed out')
+          })
+        }
 
-    function onLibraryLoaded() {
-      gapi.load('auth2', function () {
-        gapi.auth2.init({
-          client_id: 'YOUR_CLIENT_ID.apps.googleusercontent.com',
-          scope: 'profile'
-        })
-      })
-    }
+        function onLibraryLoaded() {
+          gapi.load('auth2', function () {
+            gapi.auth2.init({
+              client_id: 'YOUR_CLIENT_ID.apps.googleusercontent.com',
+              scope: 'profile'
+            })
+          })
+        }
 
-    function onSignInClicked() {
-      gapi.load('auth2', function () {
-        gapi.auth2.signIn().then(function (googleUser) {
-          console.log('user signed in')
-        }, function (error) {
-          console.log('user failed to sign in')
-        })
-      })
-    }
-  </script>
-
-
-
-  <div class="logo">
-    <div class="logo-image">
-      <img class="img" src="../static/Images/logo.png" />
+        function onSignInClicked() {
+          gapi.load('auth2', function () {
+            gapi.auth2.signIn().then(function (googleUser) {
+              console.log('user signed in')
+            }, function (error) {
+              console.log('user failed to sign in')
+            })
+          })
+        }
+      </script>
     </div>
-  </div>
-
   <div class="container">
-
-
     <div class="card">
       <div class="card-image">
         <img src="../static/Images/busch.jpg">
       </div>
       <div class="card-text">
-        <a href="http://127.0.0.1:5000/busch" class="card-title">Busch Dining Hall</a>
+        <a href="http://127.0.0.1:5000/busch" class="card-title">Busch</a>
         <div class="rate">
           <input type="radio" id="star20" name="rate" value="5" />
           <label for="star20" title="text">5 stars</label>
@@ -88,7 +80,7 @@
         <img src="../static/Images/livingston.jpg">
       </div>
       <div class="card-text">
-        <a href="http://127.0.0.1:5000/livi" class="card-title">Livingston Dining Hall</a>
+        <a href="http://127.0.0.1:5000/livi" class="card-title">Livi</a>
         <div class="rate">
           <input type="radio" id="star20" name="rate" value="5" />
           <label for="star15" title="text">5 stars</label>
@@ -110,7 +102,7 @@
         <img src="../static/Images/neilson.jpg">
       </div>
       <div class="card-text">
-        <a href="http://127.0.0.1:5000/neilson" class="card-title">Nielson Dining Hall</a>
+        <a href="http://127.0.0.1:5000/neilson" class="card-title">Neilson</a>
         <div class="rate">
           <input type="radio" id="star20" name="rate" value="5" />
           <label for="star10" title="text">5 stars</label>
@@ -132,7 +124,7 @@
       <img src="../static/Images/brower.jpg">
     </div>
     <div class="card-text">
-      <a href="http://127.0.0.1:5000/brower" class="card-title">Brower Dining Hall</a>
+      <a href="http://127.0.0.1:5000/brower" class="card-title">Brower</a>
       <div class="rate">
         <input type="radio" id="star20" name="rate" value="5" />
         <label for="star5" title="text">5 stars</label>

@@ -1,39 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&display=swap');
 
-@font-face {
-  font-family: Gilroy;
-  src: url(Fonts/AvenirLTStd-Black.otf);
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Gilroy, serif;
+  font-family: serif;
+  color: black;
 }
 
 body {
-  background: linear-gradient(#35363a, #35303f);
-  background-size: cover;
-  background-position: right;
-  background-attachment: fixed;
+  background: linear-gradient(180deg, white 55.5%, #c03 55%);
 }
 
-#header {
-  margin: 20px;
-  color: rgb(213, 213, 213)
-}
-
-#header>h1 {
-  text-align: center;
-  font-size: 3rem;
-}
-
-#header>p {
-  text-align: center;
-  font-size: 1.5rem;
-  font-style: italic;
-}
 
 a:link {
   color: white;
@@ -41,16 +19,11 @@ a:link {
   font-size: 2.3rem;
   text-decoration: none;
   margin-top: 30px;
-  font-family: Gilroy, serif;
   text-align: center;
 }
 
 a:hover {
-  color: rgba(174, 174, 174, 0.805);
-}
-
-a:visited {
-  color: rgb(109, 109, 109);
+  color: #cc0033;
 }
 
 .container {
@@ -58,24 +31,21 @@ a:visited {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  padding: 40px 20px;
+  padding: 20px 20px 120px;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
+
 
 .card {
   display: flex;
+  border: 3.5px solid #cc0033;
+  padding: 10px 10px 10px 10px;
   flex-direction: column;
-  width: 400px;
+  width: 300px;
   margin-bottom: 50px;
-}
-
-.card>div {
-  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
-}
-
-.card-image {
-  width: 400px;
-  height: 250px;
-  border-radius: 2%;
+  background-color: white;
+  font-family: Helvetica, Arial, Verdana, sans-serif;
 }
 
 .card-image>img {
@@ -83,18 +53,11 @@ a:visited {
   height: 100%;
   object-fit: cover;
   object-position: bottom;
-  border-radius: 2%;
+  object-position: 100%
 }
 
 .card-text {
-  margin: -30px auto;
   margin-bottom: 0px;
-  height: 230px;
-  width: 300px;
-  background-color: #1f1e25;
-  color: #dcdcdc;
-  padding: 40px;
-
 }
 
 .card-meal-type {
@@ -109,23 +72,20 @@ a:visited {
 
 .card-body {
   font-size: 1.25rem;
-}
 
-.logo {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  padding-left: 50%;
-  padding-right: 50%;
-  width: 250px;
 }
 
 .logo-image {
-  margin-top: 40px;
-  width: 250px;
-  height: 250px;
+  width: 5%;
+  height: 5%;
   clip-path: circle();
+  float: left;
+  margin-left: 50px;
+  margin-top: -5px;
+  min-width: 60px;
+  min-height: 60px;
 }
+
 
 .img {
   width: 250px;
@@ -148,18 +108,17 @@ a:visited {
 }
 
 .login-with-google-btn {
-  transition: background-color .3s, box-shadow .3s;
-
+  transition: background-color .3s;
   padding: 12px 16px 12px 42px;
+  margin-top: 5px;
+  display: flex;
   border: none;
   border-radius: 3px;
-  box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 1px 1px rgba(0, 0, 0, .25);
-
   color: #757575;
   font-size: 14px;
   font-weight: 500;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-
+  float: right;
   background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMTcuNiA5LjJsLS4xLTEuOEg5djMuNGg0LjhDMTMuNiAxMiAxMyAxMyAxMiAxMy42djIuMmgzYTguOCA4LjggMCAwIDAgMi42LTYuNnoiIGZpbGw9IiM0Mjg1RjQiIGZpbGwtcnVsZT0ibm9uemVybyIvPjxwYXRoIGQ9Ik05IDE4YzIuNCAwIDQuNS0uOCA2LTIuMmwtMy0yLjJhNS40IDUuNCAwIDAgMS04LTIuOUgxVjEzYTkgOSAwIDAgMCA4IDV6IiBmaWxsPSIjMzRBODUzIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNNCAxMC43YTUuNCA1LjQgMCAwIDEgMC0zLjRWNUgxYTkgOSAwIDAgMCAwIDhsMy0yLjN6IiBmaWxsPSIjRkJCQzA1IiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNOSAzLjZjMS4zIDAgMi41LjQgMy40IDEuM0wxNSAyLjNBOSA5IDAgMCAwIDEgNWwzIDIuNGE1LjQgNS40IDAgMCAxIDUtMy43eiIgZmlsbD0iI0VBNDMzNSIgZmlsbC1ydWxlPSJub256ZXJvIi8+PHBhdGggZD0iTTAgMGgxOHYxOEgweiIvPjwvZz48L3N2Zz4=);
   background-color: white;
   background-repeat: no-repeat;
@@ -167,18 +126,18 @@ a:visited {
 }
 
 .sign-out-with-google-btn {
-  transition: background-color .3s, box-shadow .3s;
-
+  transition: background-color .3s;
   padding: 12px 16px 12px 16px;
+  margin-top: 5px;
+  display: flex;
   border: none;
+  float: right;
   border-radius: 3px;
-  box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 1px 1px rgba(0, 0, 0, .25);
-
   color: #757575;
   font-size: 14px;
   font-weight: 500;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-
+  margin-right: 38px;
   background-color: white;
   background-repeat: no-repeat;
   background-position: 12px 11px;
@@ -186,10 +145,8 @@ a:visited {
 
 /* STAR SHIT */
 .rate {
-  float: left;
-  margin-left: 25px;
-  height: 46px;
-  padding: 0 10px;
+  height: px;
+  padding: 0px 60px;
 }
 
 .rate:not(:checked)>input {
@@ -227,78 +184,3 @@ a:visited {
 .rate>label:hover~input:checked~label {
   color: #c59b08;
 }
-
-/* 
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
-.containerz html,body{
-  display: grid;
-  height: 100%;
-  place-items: center;
-  text-align: center;
-  background: #000;
-}
-.containerz{
-  position: relative;
-  background: #111;
-  padding: 20px 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-    display: grid;
-  height: 100%;
-  place-items: center;
-  text-align: center;
-  background: #000;
-}
-
-.star-widget label{
-  font-size: 40px;
-  color: #ffffff;
-  padding: 10px;
-  float: right;
-  transition: all 0.2s ease;
-}
-.star-widget input:not(:checked) ~ label:hover,
-input:not(:checked) ~ label:hover ~ label{
-  color: #fd4;
-}
-.star-widget input:checked ~ label{
-  color: #fd4;
-}
-.star-widget input#rate-5:checked ~ label{
-  color: #fe7;
-  text-shadow: 0 0 20px #952;
-}
-
-.star-widget input:checked ~ form{
-  display: block;
-}
-
-.containerz form .btn{
-  height: 45px;
-  width: 10%;
-  margin: 15px 0;
-}
-
-.containerz form .btn button{
-  height: 10%;
-  width: 10%;
-  border: 1px solid #444;
-  outline: none;
-  background: #222;
-  color: #999;
-  font-size: 17px;
-  font-weight: 500;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.containerz form .btn button:hover{
-  background: #1b1b1b;
-} */
